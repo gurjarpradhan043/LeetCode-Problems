@@ -1,6 +1,16 @@
 public class palindrome {
-    public static void main(String[] args) {
-        System.out.println("Radhe Radhe ");
-        System.out.println("Hare Krishna Hare Krishna ");
+    public boolean isPalindrome(int x) {
+        
+                String original = Integer.toString(x);
+                String reversed = new StringBuilder(original).reverse().toString();
+                return original.equals(reversed);
+                
+            }
+       
+    public static void main(String[] args) {~
+      palindrome palidromeChecker = new palindrome();
+      boolean check = palidromeChecker.isPalindrome(121);
+      System.out.println("Is a palidrome ? "+ check); 
+
     }
 }

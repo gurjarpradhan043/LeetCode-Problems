@@ -1,5 +1,5 @@
 package Strings;
-public class palindrome {
+public class Palindrom {
     public boolean isPalindrome(int x) {
         
                 String original = Integer.toString(x);
@@ -9,7 +9,7 @@ public class palindrome {
             }
        
     public static void main(String[] args) {
-      palindrome palidromeChecker = new palindrome();
+      Palindrom palidromeChecker = new Palindrom();
       boolean check = palidromeChecker.isPalindrome(121);
       System.out.println("Is a palidrome ? "+ check); 
 

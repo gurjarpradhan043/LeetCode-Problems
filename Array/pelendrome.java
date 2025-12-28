@@ -1,6 +1,0 @@
-package Array;
-public class pelendrome {
-    public static void main(String[] args) {
-        System.out.println("pradhan gurjar! ");
-    }
-}

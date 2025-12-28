@@ -1,4 +1,4 @@
-package problemSolving;
+package Strings;
 
 public class IntIntoString {
     public static  String ConvertIntoString(int a) {

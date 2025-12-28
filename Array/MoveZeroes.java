@@ -1,6 +1,6 @@
-package problemSolving;
+package Array;
 
-public class Zero {
+public class MoveZeroes {
     public void swap(int nums[],int i,int j) {
         int temp = nums[i];
         nums[i] = nums[j];
@@ -20,7 +20,7 @@ public class Zero {
     }
     public static void main(String[] args) {
         int nums[] = {1,2,0,3,0,12};
-        Zero zero = new Zero();
+        MoveZeroes zero = new MoveZeroes();
         zero.moveZeroes(nums);
         for(int num : nums) {
             System.out.print(num + " "); 

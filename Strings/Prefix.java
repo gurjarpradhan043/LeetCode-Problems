@@ -1,4 +1,4 @@
-package problemSolving;
+package Strings;
 import java.util.Arrays;
 
 public class Prefix {

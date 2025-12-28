@@ -1,3 +1,4 @@
+package Strings;
 public class palindrome {
     public boolean isPalindrome(int x) {
         

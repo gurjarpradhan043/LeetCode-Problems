@@ -1,17 +1,17 @@
 class Solution {
     public int maximumWealth(int[][] accounts) {
-        int max = 0;
-        int sum = 0;
+        int richestCustomer = 0;
+        int customerWealth = 0;
         for(int i=0; i< accounts.length; i++) {
-            sum = 0;
+            customerWealth = 0;
             for(int j=0; j<accounts[i].length; j++) {
-                sum += accounts[i][j];
-                if(sum > max ) {
-                    max = sum ;
+                customerWealth += accounts[i][j];
+                if(customerWealth > richestCustomer ) {
+                    richestCustomer = customerWealth ;
                 }
 
             }
         }
-        return max;
+        return richestCustomer;
     }
 }

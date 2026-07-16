@@ -8,9 +8,8 @@ class Solution {
                 candidate = nums[i];
                 } else {
 
-                if ( count == 0 || count == 1 ) {
+                if ( count == 0  ) {
                 candidate = nums[i];
-                count = 1;
               }
                  if (candidate == nums[i]) {
                     count++;

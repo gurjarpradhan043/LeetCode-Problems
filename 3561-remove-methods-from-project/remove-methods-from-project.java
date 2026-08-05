@@ -1,55 +1,38 @@
-import java.util.*;
-
 class Solution {
     public List<Integer> remainingMethods(int n, int k, int[][] invocations) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            graph.add(new ArrayList<>());
-        }
+        List<Integer>[] graph = new ArrayList[n];
+        for (int i = 0; i < n; i++)
+            graph[i] = new ArrayList<>();
 
-        for (int[] edge : invocations) {
-            graph.get(edge[0]).add(edge[1]);
-        }
+        for (int[] e : invocations)
+            graph[e[0]].add(e[1]);
 
-        boolean[] suspicious = new boolean[n];
+        boolean[] bad = new boolean[n];
 
-       
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(k);
-        suspicious[k] = true;
+        dfs(k, graph, bad);
 
-        while (!queue.isEmpty()) {
-            int curr = queue.poll();
-            for (int next : graph.get(curr)) {
-                if (!suspicious[next]) {
-                    suspicious[next] = true;
-                    queue.offer(next);
-                }
-            }
-        }
-
-       
-        for (int[] edge : invocations) {
-            int u = edge[0];
-            int v = edge[1];
-
-            if (!suspicious[u] && suspicious[v]) {
+        for (int[] e : invocations) {
+            if (!bad[e[0]] && bad[e[1]]) {
                 List<Integer> ans = new ArrayList<>();
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < n; i++)
                     ans.add(i);
-                }
                 return ans;
             }
         }
 
-       
         List<Integer> ans = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (!suspicious[i]) {
-                ans.add(i);
-            }
-        }
+        for (int i = 0; i < n; i++)
+            if (!bad[i]) ans.add(i);
 
         return ans;
+    }
+
+    private void dfs(int node, List<Integer>[] graph, boolean[] bad) {
+        if (bad[node]) return;
+
+        bad[node] = true;
+
+        for (int next : graph[node])
+            dfs(next, graph, bad);
     }
 }

@@ -2,11 +2,10 @@ class Solution {
     public int[] rearrangeArray(int[] nums) {
         int pos = 0;
         int neg = 1;
-        int n = nums.length;
-        int ans[] = new int[n];
+        int ans[] = new int[nums.length];
 
 
-        for ( int i = 0; i < n; i++) {
+        for ( int i = 0; i < nums.length; i++) {
 
 
             if (nums[i] >= 0 ) {

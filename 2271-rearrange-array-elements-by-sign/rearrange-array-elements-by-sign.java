@@ -6,7 +6,7 @@ class Solution {
         int ans[] = new int[n];
 
 
-        for ( int i = 0; i < nums.length; i++) {
+        for ( int i = 0; i < n; i++) {
 
 
             if (nums[i] >= 0 ) {

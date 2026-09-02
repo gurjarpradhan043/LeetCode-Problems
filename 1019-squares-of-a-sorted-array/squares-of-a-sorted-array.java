@@ -19,7 +19,7 @@ int rightSquare = nums[right] * nums[right];
     k--;
 }
     }
-
+//return ans
      return ans;
     }
 }
